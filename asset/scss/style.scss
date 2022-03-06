@@ -1,0 +1,62 @@
+// variables
+$arrow-color:rgb(19, 39, 80);
+$arrow-bg: hsla(208, 100%, 97%, 0.7);
+$caption-bg: rgba(0, 0, 0, 0.6);
+$box-shadow:.2rem 0 -7rem 3rem black, 0 0 2rem rgb(80, 80, 88);
+
+$arrow-padding:1rem 1.8rem;
+$font:1.7rem;
+$side-gap:.5rem;
+
+*{
+    margin: 0;
+    padding: 0;
+}
+@mixin size {
+    height:34rem;
+    width:100%;  
+    margin: auto; 
+}
+@mixin font-stye {
+    font-size: $font;
+    position: absolute;
+    font-weight: bold;
+}
+.slide-container{
+    position: relative;
+    .slide{ 
+        display: none; 
+        @include size();
+        img{
+            width: 100%;
+            height: 100%;
+            background-repeat: no-repeat;
+        }
+        .caption{
+            width: 100vw;
+            @include font-stye();
+            bottom: 0;
+            text-align: center;
+            color: aliceblue;
+            background-color:$caption-bg;
+            padding: 1rem 0;
+        }
+    }
+    .arrow{
+        @include font-stye();
+        cursor: pointer;
+        top: 42%;
+        color: $arrow-color;
+        background-color:$arrow-bg;
+        padding: $arrow-padding;
+        border-radius: 50%;
+        box-shadow: $box-shadow;
+    }
+    .next{
+        right: $side-gap;
+    }
+    .prev{
+        left: $side-gap;
+    }
+    
+}
